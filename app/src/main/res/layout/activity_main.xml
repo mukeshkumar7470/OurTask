@@ -3,39 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <FrameLayout
+               android:id="@+id/container"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_above="@+id/bottomNav"
+               android:visibility="gone"/>
+
+           <androidx.appcompat.widget.AppCompatTextView
+               android:id="@+id/tvData"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:textSize="44sp"
+               android:layout_above="@+id/bottomNav"
+               />
 
 
-        <FrameLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/bottomNav"
-            android:visibility="gone"/>
+           <com.google.android.material.bottomnavigation.BottomNavigationView
+               android:id="@+id/bottomNav"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_alignParentBottom="true"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.5"
+               app:layout_constraintStart_toStartOf="parent"
+               app:menu="@menu/bottom_nav_menu"
+               app:labelVisibilityMode="labeled"
+               android:scrollIndicators="left"  />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvData"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="44sp"
-            android:layout_above="@+id/bottomNav"
-            />
-
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_nav_menu"
-            app:labelVisibilityMode="labeled"
-            android:scrollIndicators="left" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+           <com.google.android.material.floatingactionbutton.FloatingActionButton
+               android:id="@+id/fabAddNote"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="end"
+               android:src="@drawable/ic_solid_menu_search"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.498"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintVertical_bias="0.91" />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
