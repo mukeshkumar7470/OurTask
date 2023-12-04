@@ -7,11 +7,11 @@
     <item
         android:id="@+id/menuFinished"
         android:icon="@drawable/ic_outline_menu_finished"
-        android:title="Message" />
+        android:title="Finished" />
     <item
         android:id="@+id/menuSearch"
         android:icon="@drawable/ic_outline_menu_search"
-        android:title="Setting" />
+        android:title="Search" />
 
     <item
         android:id="@+id/menuSetting"
